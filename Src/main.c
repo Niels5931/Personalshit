@@ -45,6 +45,9 @@ void convert(uint8_t coords[][128], uint8_t *buffer) {
 
 
 int main() {
+
+	//tissemand
+
     uart_init(9600);
 
     clrscr();
