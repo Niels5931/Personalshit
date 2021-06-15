@@ -1,0 +1,11 @@
+battleship.c:8:6:battleship_game	4120	static
+battleship.c:24:9:menu	40	static
+battleship.c:60:6:waiting_screen	32	static
+battleship.c:84:6:player1	4120	static
+battleship.c:137:6:player2	16	static
+battleship.c:142:6:place_ships	64	static
+battleship.c:185:6:clear_ship	32	static
+battleship.c:195:6:draw_ship	32	static
+battleship.c:206:6:draw_cursor	32	static
+battleship.c:217:6:send_bomb	4	static
+battleship.c:221:6:receive_bomb	4	static

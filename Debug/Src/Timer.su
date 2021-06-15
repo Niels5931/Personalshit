@@ -1,0 +1,4 @@
+core_cm4.h:1071:22:NVIC_EnableIRQ	16	static
+core_cm4.h:1156:22:NVIC_SetPriority	16	static
+Timer.c:5:6:setTimer	24	static
+Timer.c:48:6:delay_ms	16	static

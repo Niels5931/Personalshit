@@ -1,0 +1,9 @@
+structures.c:15:6:initPoint	16	static
+structures.c:22:6:initAsteroid	24	static
+structures.c:30:6:initBullet	24	static
+structures.c:50:6:draw_asteroid	32	static
+structures.c:108:6:add_bullet	32	static
+structures.c:135:6:draw_bullet	24	static
+structures.c:178:6:calc_gravity_ship	16	static
+structures.c:214:6:calc_gravity_bullet	16	static
+structures.c:251:6:rotate_ship	32	static

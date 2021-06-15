@@ -1,0 +1,3 @@
+window.c:4:6:draw_window	40	static
+window.c:18:6:drawEdges	32	static
+window.c:35:6:drawTitle	32	static

@@ -1,0 +1,6 @@
+display.c:3:6:lcd_write_string	24	static
+display.c:21:6:lcd_str_line	32	static
+display.c:35:6:lcd_str_offset	32	static
+display.c:49:6:lcd_extra_offset	32	static
+display.c:63:6:lcd_set_pixels	24	static
+display.c:79:6:lcd_update	32	static
