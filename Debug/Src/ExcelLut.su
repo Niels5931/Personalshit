@@ -1,7 +1,0 @@
-ExcelLut.c:96:6:printFix	16	static
-ExcelLut.c:106:9:expand	16	static
-ExcelLut.c:111:9:roundcon	16	static
-ExcelLut.c:116:9:calcSin	16	static
-ExcelLut.c:127:9:calcCos	16	static
-ExcelLut.c:132:6:initVector	24	static
-ExcelLut.c:137:6:rotateVector	32	static

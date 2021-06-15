@@ -1,6 +1,0 @@
-pinsetup.c:3:6:setPinIn	16	static
-pinsetup.c:39:6:setPinOut	16	static
-pinsetup.c:83:10:readPinVal	24	static
-pinsetup.c:102:6:writePinVal	16	static
-pinsetup.c:136:6:initPotADC	16	static
-pinsetup.c:160:10:readPot	16	static

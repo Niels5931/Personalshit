@@ -1,8 +1,8 @@
 .DS_Store
-.Debug
-.cmsis
-.SPL
-.Startup
-..settings
-.BaseProject Debug.launch
-.STM32F302R8TX_FLASH.id
+Debug/
+BaseProject/
+cmsis/
+Debug/
+SPL/
+Startup/
+BaseProject Debug.launch/
