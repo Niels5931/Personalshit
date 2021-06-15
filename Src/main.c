@@ -55,26 +55,28 @@ int main() {
 
     setTimer(2,0,0);
 
-    bullet_t bullet, * bulletArr;
+    bullet_t bullet;
 
-    bulletArr = (bullet_t *) malloc(20* sizeof(bullet_t));
+    bulletArr_t * bulletArr;
 
     uint8_t coords[32][128] = {0};
 
     uint8_t buffer[512];
 
-    printf("Bruh");
+    initBullet(&bullet,60,10);
 
-    initBullet(&bullet,bulletArr,60,10);
+    bulletArr = (bulletArr_t *) malloc(1*sizeof(bulletArr_t));
 
-    draw_bullet(&bullet,bulletArr, coords);
+    add_bullet(bulletArr,bullet);
+
+    draw_bullet(bulletArr, coords);
 
     convert(coords,buffer);
 
     lcd_push_buffer(buffer);
 
     while(1) {
-
+    	/*
     	if(brah) {
 
     		brah = 0;
@@ -95,7 +97,7 @@ int main() {
     		lcd_push_buffer(buffer);
 
     	}
-
+*/
     }
 
 }

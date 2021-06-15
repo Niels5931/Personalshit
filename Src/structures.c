@@ -7,6 +7,9 @@
 #include <stdint.h>
 #include "structures.h"
 #include "ExcelLut.h"
+#include <stdlib.h>
+
+
 uint8_t indexArr = 0;
 
 void initPoint(point_t *point, uint8_t x, uint8_t y) {
@@ -24,7 +27,7 @@ void initAsteroid(asteroid_t *asteroid, uint8_t size,point_t point ) {
 
 }
 
-void initBullet(bullet_t * bullet, bullet_t * bulletArr, uint8_t x, uint8_t y) {
+void initBullet(bullet_t * bullet, uint8_t x, uint8_t y) {
 
 
 	bullet->x = x;
@@ -42,6 +45,7 @@ void initBullet(bullet_t * bullet, bullet_t * bulletArr, uint8_t x, uint8_t y) {
 
 
 }
+
 
 void draw_asteroid(asteroid_t *asteroid) {
 
@@ -101,27 +105,63 @@ void draw_asteroid(asteroid_t *asteroid) {
     } else indexArr--;
 }
 
-void draw_bullet(bullet_t * bullet, bullet_t * bulletArr, uint8_t coords[][128]) {
+void add_bullet(bulletArr_t * bulletArr, bullet_t bullet) {
 
-	int i, j;
+	int i,j;
 
-	for(i = 0; i < 20; i++) {
+	for (i = 0; i < 20; i++) {
 
-		if (bulletArr[i].points[0].x+1 > 127) {
+			if(!bulletArr->bullets[i].alive) {
 
-			bulletArr[i].alive = 0;
+				bulletArr->bullets[i].x = bullet.x;
+				bulletArr->bullets[i].y = bullet.y;
+				bulletArr->bullets[i].alive = 1;
+
+				for(j = 0; j < 3; j++) {
+
+					bulletArr->bullets[i].points[j].x = bullet.points[j].x;
+					bulletArr->bullets[i].points[j].y = bullet.points[j].y;
+
+				}
+
+				break;
+
+			}
+
+		}
+
+}
+
+void draw_bullet(bulletArr_t * bulletArr, uint8_t coords[][128]) {
+
+	int j, k;
+
+	for (k = 0; j < 20; k++) {
+
+	for (j = 0; j < 3; j++) {
+
+		if (bulletArr->bullets[j].points[0].x+1 < 127) {
+
+			continue;
+
+		} else {
+
+			bulletArr->bullets[j].alive = 0;
 
 		}
 
 	}
 
-	for(i = 0; i < 20; i++) {
+	}
 
-		if (bulletArr[i].alive == 1) {
 
-			for(j = 0; j < 3; j++) {
+	for (k = 0; k < 20; k++) {
 
-				bullet->points[i].x++;
+		if (bulletArr->bullets[k].alive) {
+
+			for (j = 0; j < 3; j++) {
+
+				coords[bulletArr->bullets[j].points[j].y][bulletArr->bullets[j].points[j].x] = 1;
 
 			}
 
@@ -129,15 +169,10 @@ void draw_bullet(bullet_t * bullet, bullet_t * bulletArr, uint8_t coords[][128])
 
 	}
 
-	for(i = 0; i < 3; i++) {
 
-		if(bullet->points[i].x < 128) {
 
-			coords[bullet->points[i].y][bullet->points[i].x] = 1;
 
-		}
 
-	}
 }
 
 void calc_gravity_ship(asteroid_t asteroid, ship_t * ship) {
